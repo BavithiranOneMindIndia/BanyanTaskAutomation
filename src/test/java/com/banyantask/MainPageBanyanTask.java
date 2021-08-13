@@ -70,7 +70,7 @@ public class MainPageBanyanTask extends SuperClass {
 
     public void quitDriver(WebDriver driver){
         driver.quit();
-        log.info("");
+        log.info("quitDriver");
 
     }
 

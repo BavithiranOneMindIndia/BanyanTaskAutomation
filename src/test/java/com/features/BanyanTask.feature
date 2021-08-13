@@ -12,6 +12,7 @@ Feature: Testing BanyanTask web
         Then Enter otp
         Then Then click countinue button BanyanTask
         Then assert login
+        Then Quit driver
 
         Examples:
             | Mobile     |

@@ -74,7 +74,7 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
 
     @Then("^Quit driver$")
     public void quit_driver(){
-        
+        quitDriver(driver);
     }
 
 }
