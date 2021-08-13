@@ -68,6 +68,12 @@ public class MainPageBanyanTask extends SuperClass {
 
     }
 
+    public void quitDriver(WebDriver driver){
+        driver.quit();
+        log.info("");
+
+    }
+
     boolean assertLogin(WebDriver driver) throws IOException {
         addressText = getwaitdriver(driver)
                 .until(ExpectedConditions

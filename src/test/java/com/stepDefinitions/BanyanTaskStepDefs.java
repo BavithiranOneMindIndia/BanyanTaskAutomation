@@ -72,4 +72,9 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
         verificationAssert(driver);
     }
 
+    @Then("^Quit driver$")
+    public void quit_driver(){
+        
+    }
+
 }
