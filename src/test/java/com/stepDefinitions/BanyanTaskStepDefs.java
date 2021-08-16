@@ -158,7 +158,7 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
 
     @Then("^Quit driver using browserStack$")
     public void quit_driver_using_browserStack() {
-        quitDriver(driver);
+        quitDriver(browserStackDriver);
     }
 
 }
