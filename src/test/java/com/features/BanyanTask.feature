@@ -18,3 +18,21 @@ Feature: Testing BanyanTask web
         Examples:
             | Mobile     |
             | BanyanTask |
+
+
+    @BrowerStackIntegration
+    Scenario Outline: Login in to BanyanTask web and verify login using browserStack
+        Given Integrating browserstack
+        Then  Launch chrome browser using browserStack
+        Then Enter Phone number for BanyanTask using browserStack
+        Then Then click countinue button BanyanTask using browserStack
+        Then Then click countinue button BanyanTask using browserStack
+        Then Enter otp using browserStack
+        Then Then click countinue button BanyanTask using browserStack
+        Then assert login using browserStack
+        Then Wait action for "3" seconds BanyanTask using browserStack
+        Then Quit driver using browserStack
+
+        Examples:
+            | Mobile     | Launch       |
+            | BanyanTask | BrowserStack |

@@ -12,6 +12,7 @@ public class MainPageBanyanTask extends SuperClass {
 
     String addressText;
     static Logger log = Logger.getLogger(MainPageBanyanTask.class);
+    
 
     public void clickLoginButton(WebDriver driver) throws IOException {
         getwaitdriver(driver)
@@ -66,7 +67,7 @@ public class MainPageBanyanTask extends SuperClass {
 
     }
 
-    public void quitDriver(WebDriver driver){
+    public void quitDriver(WebDriver driver) {
         driver.quit();
         log.info("quitDriver");
 
@@ -86,6 +87,12 @@ public class MainPageBanyanTask extends SuperClass {
 
         }
 
+    }
+
+    // BrowserStack
+
+    public void browserStack_integration() {
+        
     }
 
 }

@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/com/features/BanyanTask.feature", glue = "com.stepDefinitions", tags = "@LoginVerify", plugin = {
+@CucumberOptions(features = "src/test/java/com/features/BanyanTask.feature", glue = "com.stepDefinitions", tags = "@BrowerStackIntegration", plugin = {
         "pretty" }, monochrome = true, stepNotifications = true)
 
 public class TestRunner {
