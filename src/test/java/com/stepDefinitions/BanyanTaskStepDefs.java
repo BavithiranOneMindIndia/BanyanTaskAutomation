@@ -10,7 +10,6 @@ import java.util.Set;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-
 import com.banyantask.MainPageBanyanTask;
 
 import org.apache.log4j.Logger;
@@ -154,6 +153,17 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
     @Then("^assert login using browserStack$")
     public void assert_login_using_browserStack() throws IOException {
         verificationAssert(browserStackDriver);
+    }
+
+    @Then("^assert project availabilty using browserStack$")
+    public void assert_project_availability_using_browserstack() throws IOException {
+        assertProjectAvailableOrNot(browserStackDriver);
+    }
+
+    @Then("^assert task availability using browserStack$")
+    public void assert_task_availability_using_browserStack() throws IOException {
+        assertTaskAvailableOrNot(browserStackDriver);
+
     }
 
     @Then("^Quit driver using browserStack$")

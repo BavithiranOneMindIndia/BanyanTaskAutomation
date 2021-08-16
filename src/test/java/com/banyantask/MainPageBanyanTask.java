@@ -12,7 +12,6 @@ public class MainPageBanyanTask extends SuperClass {
 
     String addressText;
     static Logger log = Logger.getLogger(MainPageBanyanTask.class);
-    
 
     public void clickLoginButton(WebDriver driver) throws IOException {
         getwaitdriver(driver)
@@ -58,6 +57,7 @@ public class MainPageBanyanTask extends SuperClass {
 
         System.out.println(driver.findElement(getValueFromElementAddressConfig("ah.getUserText")).getText());
         log.info("getUserNameText");
+        driver.navigate().refresh();
     }
 
     public void verificationAssert(WebDriver driver) throws IOException {
@@ -65,6 +65,18 @@ public class MainPageBanyanTask extends SuperClass {
         assertTrue(assertLogin(driver));
         log.info("assertion Ended");
 
+    }
+
+    public void assertProjectAvailableOrNot(WebDriver driver) throws IOException {
+        log.info("Project assertion Started");
+        assertTrue(assertProjectAvailable(driver));
+        log.info("Project assertion Started");
+    }
+
+    public void assertTaskAvailableOrNot(WebDriver driver) throws IOException {
+        log.info("Task assertion Started");
+        assertTrue(assertTaskAvailable(driver));
+        log.info("Task assertion Started");
     }
 
     public void quitDriver(WebDriver driver) {
@@ -89,10 +101,41 @@ public class MainPageBanyanTask extends SuperClass {
 
     }
 
+    boolean assertProjectAvailable(WebDriver driver) throws IOException {
+
+        getwaitdriver(driver).until(ExpectedConditions
+                .visibilityOfElementLocated(getValueFromElementAddressConfig("banyan.ProjectCard.available")));
+
+        if (driver.findElement(getValueFromElementAddressConfig("banyan.ProjectCard.available"))
+                .isDisplayed() == true) {
+            return true;
+
+        } else {
+            return false;
+
+        }
+
+    }
+
+    boolean assertTaskAvailable(WebDriver driver) throws IOException {
+
+        getwaitdriver(driver).until(ExpectedConditions
+                .visibilityOfElementLocated(getValueFromElementAddressConfig("banyan.taskCard.available")));
+
+        if (driver.findElement(getValueFromElementAddressConfig("banyan.taskCard.available")).isDisplayed() == true) {
+            return true;
+
+        } else {
+            return false;
+
+        }
+
+    }
+
     // BrowserStack
 
     public void browserStack_integration() {
-        
+
     }
 
 }

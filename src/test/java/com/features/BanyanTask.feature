@@ -29,8 +29,11 @@ Feature: Testing BanyanTask web
         Then Then click countinue button BanyanTask using browserStack
         Then Enter otp using browserStack
         Then Then click countinue button BanyanTask using browserStack
+        Then Wait action for "2" seconds BanyanTask using browserStack
         Then assert login using browserStack
         Then Wait action for "3" seconds BanyanTask using browserStack
+        Then assert project availabilty using browserStack
+        Then assert task availability using browserStack
         Then Quit driver using browserStack
 
         Examples:

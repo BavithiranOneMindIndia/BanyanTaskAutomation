@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cucumberOptions.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 2, Skipped: 1, Time elapsed: 40.059 s <<< FAILURE! - in com.cucumberOptions.TestRunner
-Wait action for "3" seconds BanyanTask using browserStack(Login in to BanyanTask web and verify login using browserStack)  Time elapsed: 0.002 s  <<< ERROR!
-io.cucumber.junit.UndefinedStepException: 
-The step 'Wait action for "3" seconds BanyanTask using browserStack' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("Wait action for {string} seconds BanyanTask using browserStack")
-public void wait_action_for_seconds_banyan_task_using_browser_stack(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-
-Login in to BanyanTask web and verify login using browserStack  Time elapsed: 0.016 s  <<< ERROR!
-io.cucumber.junit.UndefinedStepException: 
-The step 'Wait action for "3" seconds BanyanTask using browserStack' is undefined.
-You can implement this step using the snippet(s) below:
-
-@Then("Wait action for {string} seconds BanyanTask using browserStack")
-public void wait_action_for_seconds_banyan_task_using_browser_stack(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.682 s - in com.cucumberOptions.TestRunner
