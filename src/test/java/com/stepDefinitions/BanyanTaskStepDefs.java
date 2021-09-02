@@ -85,6 +85,17 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
         verificationAssert(driver);
     }
 
+    @Then("^assert project availabilty$")
+    public void assert_project_availability() throws IOException {
+        assertProjectAvailableOrNot(driver);
+    }
+
+    @Then("^assert task availability$")
+    public void assert_task_availability() throws IOException {
+        assertTaskAvailableOrNot(driver);
+
+    }
+
     @Then("^Quit driver$")
     public void quit_driver() {
         quitDriver(driver);
@@ -111,37 +122,37 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
             caps.setCapability(key, capsHashtable.get(key));
         }
 
-        browserStackDriver = new RemoteWebDriver(new URL(URL), caps);
+        driver = new RemoteWebDriver(new URL(URL), caps);
     }
 
     @Then("^Launch chrome browser using browserStack$")
     public void launch_browserStack_using_browerStack() throws IOException {
 
-        browserStackDriver.get(getValueFromDataConfig("Live.Web.Url"));
+        driver.get(getValueFromDataConfig("Live.Web.Url"));
         // driver.get("https://www.onemindindia.com/home");
-        browserStackDriver.getWindowHandle();
-        browserStackDriver.manage().window().maximize();
+        driver.getWindowHandle();
+        driver.manage().window().maximize();
     }
 
     @Then("^Click Login for BanyanTask using browserStack$")
     public void click_Login_for_BanyanTask_using_browserStack() throws IOException {
-        clickLoginButton(browserStackDriver);
+        clickLoginButton(driver);
     }
 
     @Then("^Enter Phone number for BanyanTask using browserStack$")
     public void enter_phone_number_for_BanyanTask_using_browserStack() throws IOException {
-        enterPhoneNumber(browserStackDriver, getValueFromDataConfig("MobileNumber"));
+        enterPhoneNumber(driver, getValueFromDataConfig("MobileNumber"));
     }
 
     @Then("^Enter otp using browserStack$")
     public void enter_otp_using_browserStack() throws IOException {
-        enterOtp(browserStackDriver, getValueFromDataConfig("OTP"));
+        enterOtp(driver, getValueFromDataConfig("OTP"));
 
     }
 
     @Then("^Then click countinue button BanyanTask using browserStack$")
     public void then_Click_countinue_button_using_browserStack() throws InterruptedException, IOException {
-        clickCountinueButton(browserStackDriver);
+        clickCountinueButton(driver);
         Thread.sleep(3000);
     }
 
@@ -152,23 +163,23 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
 
     @Then("^assert login using browserStack$")
     public void assert_login_using_browserStack() throws IOException {
-        verificationAssert(browserStackDriver);
+        verificationAssert(driver);
     }
 
     @Then("^assert project availabilty using browserStack$")
     public void assert_project_availability_using_browserstack() throws IOException {
-        assertProjectAvailableOrNot(browserStackDriver);
+        assertProjectAvailableOrNot(driver);
     }
 
     @Then("^assert task availability using browserStack$")
     public void assert_task_availability_using_browserStack() throws IOException {
-        assertTaskAvailableOrNot(browserStackDriver);
+        assertTaskAvailableOrNot(driver);
 
     }
 
     @Then("^Quit driver using browserStack$")
     public void quit_driver_using_browserStack() {
-        quitDriver(browserStackDriver);
+        quitDriver(driver);
     }
 
 }
