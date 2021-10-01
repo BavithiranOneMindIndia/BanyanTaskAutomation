@@ -11,10 +11,29 @@ Feature: Testing BanyanTask web
         Then Then click countinue button BanyanTask
         Then Enter otp
         Then Then click countinue button BanyanTask
+        Then Enter panic password
+        Then Wait action for "2" seconds BanyanTask
         Then assert login
         Then Wait action for "3" seconds BanyanTask
-        Then assert project availabilty
-        Then assert task availability
+        Then Quit driver
+
+        Examples:
+            | Mobile     |
+            | BanyanTask |
+
+    @GridLoginVerify
+    Scenario Outline: Login in to BanyanTask web and verify login using grid
+        Given Launch chrome using grid node
+        Then  Launch chrome browser for BanyanTask
+        Then Enter Phone number for BanyanTask
+        Then Then click countinue button BanyanTask
+        Then Then click countinue button BanyanTask
+        Then Enter otp
+        Then Then click countinue button BanyanTask
+        Then Enter panic password
+        Then Wait action for "2" seconds BanyanTask
+        Then assert login
+        Then Wait action for "3" seconds BanyanTask
         Then Quit driver
 
         Examples:

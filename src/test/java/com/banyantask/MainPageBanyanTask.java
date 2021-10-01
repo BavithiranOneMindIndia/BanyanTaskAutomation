@@ -6,7 +6,10 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;	
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class MainPageBanyanTask extends SuperClass {
 
@@ -77,6 +80,34 @@ public class MainPageBanyanTask extends SuperClass {
         log.info("Task assertion Started");
         assertTrue(assertTaskAvailable(driver));
         log.info("Task assertion Started");
+    }
+
+    public void enterPanicPassword(WebDriver driver) throws IOException {
+        getwaitdriver(driver).until(
+                ExpectedConditions.visibilityOfElementLocated(getValueFromElementAddressConfig("banyan.panic.1")));
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.1")).sendKeys("1");
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.2")).sendKeys("2");
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.3")).sendKeys("3");
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.4")).sendKeys("4");
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.5")).sendKeys("5");
+        driver.findElement(getValueFromElementAddressConfig("banyan.panic.6")).sendKeys("6");
+        getwaitdriver(driver).until(
+                ExpectedConditions.visibilityOfElementLocated(getValueFromElementAddressConfig("banyan.authen")));
+        driver.findElement(getValueFromElementAddressConfig("banyan.authen")).click();
+
+    }
+
+    public void mainTaskAddedButton(WebDriver driver) throws InterruptedException {
+
+        String cssSelectorForHost1 = ".fab-icon.ng-star-inserted.md.ion-activatable.ion-focusable.hydrated";
+        Thread.sleep(1000);
+        WebElement shadowDomHostElement = driver
+                .findElement(By.cssSelector(".fab-icon.ng-star-inserted.md.ion-activatable.ion-focusable.hydrated"));
+        WebElement last = (WebElement) ((JavascriptExecutor) driver).executeScript("return arguments[0].shadowRoot",
+                shadowDomHostElement);
+        Thread.sleep(1000);
+        last.findElement(By.cssSelector(".button-inner"));
+
     }
 
     public void quitDriver(WebDriver driver) {
