@@ -39,7 +39,11 @@ public class BanyanTaskStepDefs extends MainPageBanyanTask {
     @Given("^Access WebDriverManager For BanyanTask$")
     public void access_web_driver_manager_for_banyan_task() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
