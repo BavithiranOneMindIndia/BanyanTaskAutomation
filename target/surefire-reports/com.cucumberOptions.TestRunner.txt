@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cucumberOptions.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.153 s - in com.cucumberOptions.TestRunner
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.191 s - in com.cucumberOptions.TestRunner
