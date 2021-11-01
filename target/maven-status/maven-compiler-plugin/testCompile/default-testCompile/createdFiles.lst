@@ -3,5 +3,7 @@ com\stepDefinitions\BanyanTaskStepDefs.class
 com\banyantask\BaseClass.class
 com\banyantask\MainPageLocalBanyanTask.class
 com\banyantask\MainPageBanyanTask.class
+com\stepDefinitions\BanyanTaskMobileStepDefs.class
+com\banyantask\MainPageBanyanTaskMobile.class
 com\banyantask\ConstantVar.class
 com\cucumberOptions\TestRunner.class
